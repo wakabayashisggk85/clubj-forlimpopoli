@@ -1,0 +1,25 @@
+.squadra.block {
+    display: table;
+    width: 100%;
+    background-color: #eee;
+    border: 1px solid #666666;
+    border-spacing: 5px;
+}
+
+.squadra.block .table-header {
+    background-color: black;
+    color: white;
+}
+
+.squadra.block .table-row {
+    display: table-row;
+    width: auto;
+    clear: both;
+}
+
+.squadra.block .table-row .table-cell {
+    display: table-cell;
+    width: auto;
+    padding: 5px;
+    vertical-align: top;
+}

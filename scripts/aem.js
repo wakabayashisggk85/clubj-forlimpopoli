@@ -389,7 +389,8 @@ function decorateButtons(element) {
           twoup.classList.add('button-container');
         }
       }
-      if (a.href.indexOf(".hlx.live") > -1 || a.href.indexOf(".hlx.page") > -1) {
+      // if link is external
+      if (a.href.indexOf(".hlx.live") === -1 || a.href.indexOf(".hlx.page") === -1) {
         // add target blank to element
         a.target = "_blank";
       }

@@ -142,4 +142,13 @@ export default async function decorate(block) {
     navWrapper.append(nav);
     block.append(navWrapper);
   }
+
+  // select links in nav-tools class
+  const tools = block.querySelector('.nav-tools');
+  if (tools) {
+    tools.querySelectorAll('a').forEach((link) => {
+      // add target blank
+      link.setAttribute('target', '_blank');
+    });
+  }
 }

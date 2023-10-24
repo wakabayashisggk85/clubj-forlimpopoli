@@ -148,7 +148,10 @@ export default async function decorate(block) {
   if (tools) {
     tools.querySelectorAll('a').forEach((link) => {
       // add target blank
-      link.setAttribute('target', '_blank');
+      if (link.href.indexOf(".hlx.live") === -1 || link.href.indexOf(".hlx.page") === -1) {
+        // add target blank to element
+        link.setAttribute('target', '_blank');
+      }
     });
   }
 }

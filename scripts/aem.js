@@ -430,10 +430,6 @@ function decorateIcons(element, prefix = '') {
  * Locks the screen in portrait mode.
  */
 function lockPortrait() {
-  if (!navigator.userAgentData.mobile) {
-    return;
-  }
-  
   // create overlay div
   const overlay = document.createElement('div');
   overlay.id = 'overlay';
@@ -443,7 +439,7 @@ function lockPortrait() {
   document.body.appendChild(overlay);
 
   // display overlay if orientation is not landscape
-  if (window.orientation === 0) {
+  if (screen.orientation.type == "portrait-primary" || screen.orientation.type == "portrait-secondary") {
     document.getElementById('overlay').style.display = 'block';
   }
   // hide overlay if orientation is landscape

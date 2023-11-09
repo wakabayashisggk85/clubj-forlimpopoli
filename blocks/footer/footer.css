@@ -1,6 +1,5 @@
 footer {
   padding: 2rem;
-  background-color: var(--overlay-background-color);
   font-size: var(--body-font-size-s);
 }
 
@@ -11,4 +10,21 @@ footer .footer {
 
 footer .footer p {
   margin: 0;
+}
+
+.sponsors div {
+  text-align: center;
+}
+
+.sponsors div div {
+  display: inline-block;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+
+.sponsors div div img {
+  max-width: 200px;
+  display: block;
+  width: auto;
+  height: auto;
 }

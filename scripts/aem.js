@@ -427,6 +427,44 @@ function decorateIcons(element, prefix = '') {
 }
 
 /**
+ * Locks the screen in portrait mode.
+ */
+function lockPortrait() {
+  if (!navigator.userAgentData.mobile) {
+    return;
+  }
+  
+  // create overlay div
+  const overlay = document.createElement('div');
+  overlay.id = 'overlay';
+  overlay.className = 'overlay';
+  overlay.innerHTML = '<div class="overlay-content"><p>Please rotate your device to landscape.</p></div>';
+  overlay.style.display = 'none';
+  document.body.appendChild(overlay);
+
+  // display overlay if orientation is not landscape
+  if (window.orientation === 0) {
+    document.getElementById('overlay').style.display = 'block';
+  }
+  // hide overlay if orientation is landscape
+  else {
+    document.getElementById('overlay').style.display = 'none';
+  }
+
+  // add event listener to detect orientation change
+  window.addEventListener('orientationchange', () => {
+    // display overlay if orientation is not landscape
+    if (window.orientation === 0) {
+      document.getElementById('overlay').style.display = 'block';
+    }
+    // hide overlay if orientation is landscape
+    else {
+      document.getElementById('overlay').style.display = 'none';
+    }
+  });
+}
+
+/**
  * Decorates all sections in a container element.
  * @param {Element} main The container element
  */
@@ -689,6 +727,7 @@ export {
   decorateBlocks,
   decorateButtons,
   decorateIcons,
+  lockPortrait,
   decorateSections,
   decorateTemplateAndTheme,
   fetchPlaceholders,

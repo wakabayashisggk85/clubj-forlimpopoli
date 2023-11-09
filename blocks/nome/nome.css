@@ -23,3 +23,22 @@
     padding: 5px;
     vertical-align: top;
 }
+
+.nome .accordion {
+    cursor: pointer;
+}
+
+.nome .active {
+    background-color: #ccc;
+}
+
+.nome .panel {
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+.nome img {
+    max-height: 500px;
+}
